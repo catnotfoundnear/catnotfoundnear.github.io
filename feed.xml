@@ -3,7 +3,7 @@
     <title>catnotfoundnear</title>
     <link href="https://catnotfoundnear.github.io/feed.xml" rel="self" />
     <link href="https://catnotfoundnear.github.io" />
-    <updated>2024-02-01T20:41:30+01:00</updated>
+    <updated>2024-02-01T21:25:51+01:00</updated>
     <author>
         <name>catnotfoundnear</name>
     </author>
@@ -20,17 +20,18 @@
             <category term="json"/>
             <category term="benchmark"/>
 
-        <updated>2024-02-01T20:41:30+01:00</updated>
+        <updated>2024-02-01T21:25:51+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://catnotfoundnear.github.io/media/posts/3/catnotfoundnear_cover.jpg" alt="" />
-                    Handling JSON data is a fundamental task. As the popularity of JSON&hellip;
+                    Average reading time: 4 minutes Handling JSON data is a fundamental task.
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                     <p><img src="https://catnotfoundnear.github.io/media/posts/3/catnotfoundnear_cover.jpg" class="type:primaryImage" alt="" /></p>
-                <p><span style="font-weight: 400;">Handling JSON data is a fundamental task. As the popularity of JSON has grown, so has the number of libraries. But which library is the fastest?</span></p>
+                <p>Average reading time: <em>4 minutes</em></p>
+<p><span style="font-weight: 400;">Handling JSON data is a fundamental task. As the popularity of JSON has grown, so has the number of libraries. But which library is the fastest?</span></p>
 <p><span style="font-weight: 400;">In this article, I will benchmark the eight Python JSON libraries, which are:</span></p>
 <ul>
 <li style="font-weight: 400;" aria-level="1"><strong>orjson</strong><span style="font-weight: 400;">: </span><a href="https://github.com/ijl/orjson"><span style="font-weight: 400;">ijl/orjson</span></a></li>
