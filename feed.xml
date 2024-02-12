@@ -3,7 +3,7 @@
     <title>catnotfoundnear</title>
     <link href="https://catnotfoundnear.github.io/feed.xml" rel="self" />
     <link href="https://catnotfoundnear.github.io" />
-    <updated>2024-02-03T16:05:18+01:00</updated>
+    <updated>2024-02-12T12:24:40+01:00</updated>
     <author>
         <name>catnotfoundnear</name>
     </author>
@@ -20,7 +20,7 @@
             <category term="saas"/>
             <category term="django"/>
 
-        <updated>2024-02-03T16:05:18+01:00</updated>
+        <updated>2024-02-12T12:24:40+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://catnotfoundnear.github.io/media/posts/4/catnotfoundnear_cover2-2.jpg" alt="" />
@@ -60,10 +60,11 @@
 <li><span style="font-weight: 400;">Germany</span></li>
 </ol>
 <p><span style="font-weight: 400;">As you can see, my website traffic </span><strong>does not align </strong><span style="font-weight: 400;">with my sales report. Six out of ten countries that have sent high traffic to my website </span><strong>do not generate sales</strong><span style="font-weight: 400;">.</span></p>
-<p><span style="font-weight: 400;">Despite being the top-selling country in Europe, Germany is in 10th place in my traffic report. On the other hand, India has four times more traffic than Germany, but it ranks around 24th in sales and hardly makes any money.</span></p>
-<p><span style="font-weight: 400;">I get huge loads of traffic from nearly 90 countries, but only 10 generate real sales. Those 80 countries are left untouched, and I miss 88% of my potential revenue. And I am 100% sure that if you have actually opened up your sales and traffic reports, you will see a similar picture.</span></p>
+<p><span style="font-weight: 400;">Despite being the top-selling country in Europe, Germany is in 10th place in my traffic report. On the other hand, India has ~four times more traffic than Germany, but it ranks around 24th in sales and hardly makes any money.</span></p>
+<p><span style="font-weight: 400;">I get huge loads of traffic from nearly 90 countries, but only 10 generate real sales. Those 80 countries are left untouched, <strong>and I miss 88% of my potential revenue</strong>. And I am sure that if you have actually opened up your sales and traffic reports, you will see a similar picture.</span></p>
 <p><strong>But why does it happen?</strong></p>
-<p><span style="font-weight: 400;">As you might have noticed, the top-selling countries have one thing in common. </span><strong>They are rich as heck.</strong></p>
+<p><span style="font-weight: 400;">As you might have noticed, the top-selling countries have one thing in common. </span></p>
+<p><strong>They are rich as heck.</strong></p>
 <p><span style="font-weight: 400;">At the same time, the countries in the traffic report are not particularly known for being “rich”. What happens is that people in those countries usually have a lower level of salary and, consequently, much lower buying power.</span></p>
 <p><span style="font-weight: 400;">So, you have probably already guessed the largest obstacle here. It’s the </span><strong>price of your products</strong><span style="font-weight: 400;">.</span></p>
 <p><span style="font-weight: 400;">And this is quite obvious—just compare the average salary in Germany, which is about 51k Euro per year, with India, which has an average salary of 5k Euro. This is just about 10 times lower. </span></p>
@@ -76,8 +77,7 @@
 <h2><span style="font-weight: 400;">Finally, you have made it to the tutorial part</span></h2>
 <p><span style="font-weight: 400;">Now, let’s talk about how to implement geographical pricing (finally!).</span></p>
 <h3><span style="font-weight: 400;">So, how do you implement it, girl?</span></h3>
-<p><span style="font-weight: 400;">I already know the basic idea of geographical pricing, and now I only need to implement it on my Django website. </span></p>
-<p><span style="font-weight: 400;">Specifically, I aim to implement a form of geographical pricing that operates </span><i><span style="font-weight: 400;">discreetly</span></i><span style="font-weight: 400;">, similar to how S&amp;P 500 companies do. My goal is to dynamically display adapted prices to visitors from, for example, South Africa, <strong>without </strong></span>explicitly <span style="font-weight: 400;">indicating that these prices may differ for others. So, I don’t want to say “Hey, you are from South Africa, here is a discount for you!”. Instead, I want to adjust the prices “<em>silently</em>”.</span></p>
+<p><span style="font-weight: 400;">I already know the basic idea of geographical pricing, and now I only need to implement it on my Django website. </span><span style="font-weight: 400;">Specifically, I aim to implement a form of geographical pricing that operates </span><i><span style="font-weight: 400;">discreetly</span></i><span style="font-weight: 400;">, similar to how S&amp;P 500 companies do. My goal is to dynamically display adapted prices to visitors from, for example, South Africa, <strong>without </strong></span>explicitly <span style="font-weight: 400;">indicating that these prices may differ for others. So, I don’t want to say “Hey, you are from South Africa, here is a discount for you!”. Instead, I want to adjust the prices “<em>silently</em>”.</span></p>
 <p><span style="font-weight: 400;">Roughly, what I need to do is:</span></p>
 <ol>
 <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">On my pricing page, (where I display the prices for my product, duh) I want to show the </span><strong>adapted </strong><span style="font-weight: 400;">prices, based on the visitor’s location. For this, I need to:</span>
@@ -96,39 +96,17 @@
 </li>
 </ol>
 <p><span style="font-weight: 400;">At the same time, I only want to do this to the countries with lower buying power: for example, only for India, Poland, Turkey, etc. But not for the countries with high buying power, where I already make profits, like US, UK, Germany, etc. So, for the “rich” countries, I don’t want to make any changes to my pricing process—it will only be different for the countries with lower buying power.</span></p>
-<p><span style="font-weight: 400;">As a software engineer, I quickly saw a major flaw in this thing. What if some smart ass from San Francisco tries to use a VPN to circumvent my geographical pricing and pretend he is from Venezuela to get, like, a 60% discount? </span></p>
-<p><span style="font-weight: 400;">This is when I realized that implementing geographical pricing might not be as easy as I thought it would be. And when I think about it again, I wonder how I could have missed such a major issue and not seen it coming. </span></p>
-<p><span style="font-weight: 400;">I opened up DuckDuckGo (because go to hell, Google) and searched for how to implement geographical pricing for SaaS. </span></p>
-<p><span style="font-weight: 400;">I found two solutions called “ParityVend” and “ParityDeals”. I compared them and decided to go with ParityVend because:</span></p>
+<p><span style="font-weight: 400;">As a software engineer, I quickly saw a major flaw in this thing. What if some smart ass from San Francisco tries to use a VPN to circumvent my geographical pricing and pretend he is from Venezuela to get, like, a 60% discount? </span><span style="font-weight: 400;">This is when I realized that implementing geographical pricing might not be as easy as I thought it would be. And when I think about it again, I wonder how I could have missed such a major issue and not seen it coming. </span></p>
+<p><span style="font-weight: 400;">I opened up DuckDuckGo (because go to hell, Google) and searched for how to implement geographical pricing for SaaS. </span><span style="font-weight: 400;">I found several solutions, called “ParityVend” and “ParityDeals”. I compared them and decided to go with ParityVend because:</span></p>
 <ol>
-<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">ParityVend has a much more generous free plan with more monthly requests and features</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">has a much more generous free plan with more monthly requests and features</span></li>
 <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">It includes API in its free plan, which is a requirement for any SaaS (the most important point here)</span></li>
 <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">It also has good documentation</span></li>
-<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Its free plan does not require a credit card</span></li>
-<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">and it just looks nicer…</span></li>
 </ol>
-<p><span style="font-weight: 400;">So, I decided to sign up for a free plan with ParityVend. The process was simple, but here are some screenshots for you:</span></p>
-<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-translation="Add images" data-columns="3">
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image2.png" data-size="1920x901"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image2-thumbnail.webp" alt="" width="768" height="360"></a>
-<figcaption>From ParityVend's main page, go to pricing</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image9.png" data-size="1920x968"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image9-thumbnail.webp" alt="" width="768" height="387"></a>
-<figcaption>Click on "free"</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image1.png" data-size="1920x968"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image1-thumbnail.webp" alt="" width="768" height="387"></a>
-<figcaption>Click "register"</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image12.png" data-size="1920x968"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image12-thumbnail.webp" alt="" width="768" height="387"></a>
-<figcaption>I signed up with Google</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image11.png" data-size="1920x956"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image11-thumbnail.webp" alt="" width="768" height="382"></a>
-<figcaption>Click "get started"</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image5.png" data-size="1920x974"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image5-thumbnail.webp" alt="" width="768" height="390"></a>
-<figcaption>Yay, all done!</figcaption>
-</figure>
-</div></div>
-<p><span style="font-weight: 400;">Then, I created a test project and grabbed my API keys (more on this later on). I am ready to implement geographical pricing for my Django SaaS. FYI, for this whole process, I followed ParityVend’s “</span><a href="https://www.ambeteco.com/ParityVend/docs/getting_started.html" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">Getting Started</span></a><span style="font-weight: 400;">” tutorial. Here is what I did next:</span></p>
+<p><span style="font-weight: 400;">So, I decided to sign up for a free plan with ParityVend. </span><span style="font-weight: 400;">Then, I created a test project and grabbed my API keys. After this, I was ready to implement geographical pricing for my Django SaaS. FYI, for this whole process, I followed the <a href="https://www.ambeteco.com/ParityVend/docs/getting_started.html" target="_blank" rel="noopener noreferrer">service's docs</a></span><a href="https://www.ambeteco.com/ParityVend/docs/getting_started.html" target="_blank" rel="noopener noreferrer"></a><span style="font-weight: 400;">. </span></p>
+<blockquote>
+<p>before y'all start screaming "bah, shame on you! that's an advertising! you-marketing-bitch!!!!", I will tell you: no, this is not an advertising or a promotion. My blog is proudly ad-free, and it's going to stay that way <span style="text-decoration: line-through;">(because I am a fucking loser and brands don't take me seriously)</span>. I'm just here to share some interesting tools that I've come across and genuinely enjoy, I don't get anything for this, except for the <strong>internet points</strong> on Reddit, obviously.</p>
+</blockquote>
 <h2><span style="font-weight: 400;">Finally, here goes the coding part</span></h2>
 <p><span style="font-weight: 400;">If you are reading this tutorial, it means that you </span><i><span style="font-weight: 400;">already </span></i><span style="font-weight: 400;">have a SaaS website built with Django. This means you are </span><strong><i>likely </i></strong><span style="font-weight: 400;">to know how to create a new Django project. So, I will skip the basic things. Let’s assume that your SaaS has at least two parts: a pricing page and the checkout code. For me, this is how my pricing page looks (“dope”, right?):</span></p>
 <figure class="post__image" ><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/image6.png" alt="My wonderful pricing page" width="1920" height="1080" sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://catnotfoundnear.github.io/media/posts/4/responsive/image6-xs.webp 320w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image6-sm.webp 480w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image6-md.webp 768w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image6-xl.webp 1024w">
@@ -163,30 +141,15 @@
 <figure class="post__image" ><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/image10.png" alt="" width="1918" height="967" sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://catnotfoundnear.github.io/media/posts/4/responsive/image10-xs.webp 320w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image10-sm.webp 480w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image10-md.webp 768w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image10-xl.webp 1024w">
 <figcaption >Stripe works!</figcaption>
 </figure>
-<p><span style="font-weight: 400;">So, now that we have a basic “SaaS”, let’s add geographical pricing to it. Based on my plan, I need to make changes to the pricing page and then to my checkout code. Before we proceed, let me briefly explain the project setup I completed in ParityVend. In short, I created a new project, entered an example domain, skipped the design step, added coupon codes for each country group I wanted to offer discounts in, and finally, copied my API keys. Here are some screenshots that illustrate my steps:</span></p>
-<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-translation="Add images" data-columns="4">
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image3.png" data-size="1196x515"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image3-thumbnail.webp" alt="" width="768" height="331"></a>
-<figcaption>enter domain</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image7.png" data-size="1663x929"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image7-thumbnail.webp" alt="" width="768" height="429"></a>
-<figcaption>I will skip the design part, as I only use API</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image4.png" data-size="1531x942"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image4-thumbnail.webp" alt="" width="768" height="473"></a>
-<figcaption>Configuring the discounts for country groups</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://catnotfoundnear.github.io/media/posts/4/gallery/image8.png" data-size="1456x836"><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/gallery/image8-thumbnail.webp" alt="" width="768" height="441"></a>
-<figcaption>I added discounts and coupon codes for the countries where I want to offer geographical pricing</figcaption>
-</figure>
-</div></div>
-<p><span style="font-weight: 400;">Then, I went to Stripe and added the coupons for the ones I created in ParityVend. After this, I was good to go.</span></p>
-<p><span style="font-weight: 400;">Let’s continue with the pricing page. I used ParityVend’s “</span><a href="https://www.ambeteco.com/ParityVend/docs/api_integration_tutorial.html#integration-example" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">API Tutorial</span></a><span style="font-weight: 400;">” as a reference (meaning that I basically copied the whole code from there). For the API keys part, I simply decided to go with Django’s template engine and render my ParityVend’s API keys.</span></p>
-<p><span style="font-weight: 400;">So, I added ParityVend API to my pricing page and added some code to change the price of “My Amazing Product” based on the discount that ParityVend API returns for the visitor of my page. Here is how my updated pricing page code looks:</span></p>
+<p><span style="font-weight: 400;">So, now that we have a basic “SaaS”, let’s add geographical pricing to it. Based on my plan, I need to make changes to the pricing page and then to my checkout code. Before we proceed, let me briefly explain the project setup I completed in Parityvend: in short, I created a new project, entered an example domain, skipped the design step, added coupon codes for each country group I wanted to offer discounts in, and finally, copied my API keys. </span><span style="font-weight: 400;">Then, I went to Stripe and added the coupons for the ones I created in ParityVend. After this, I was good to go. I don't want to explain these boring steps as it was easy enough, so you probably can do it, too. </span></p>
+<p><span style="font-weight: 400;">Let’s continue with the pricing page. I used the <a href="https://www.ambeteco.com/ParityVend/docs/api_integration_tutorial.html#integration-example" target="_blank" rel="noopener noreferrer">docs</a></span><span style="font-weight: 400;"> as a reference (meaning that I copied the whole code from there). For the API keys part, I simply decided to go with Django’s template engine and render my API keys that way.</span></p>
+<p><span style="font-weight: 400;">So, I added the API to my pricing page and added some code to change the price of “My Amazing Product” based on the discount that the API returns for the visitor of my page. Here is how my updated pricing page code looks:</span></p>
 <pre class="language-html line-numbers"><code>&lt;script&gt;
     window.addEventListener('DOMContentLoaded', async () =&gt; {
         let url = "https://api.parityvend.com/frontend/testing-mode-get-discount/";
         url += '{{PARITYVEND_KEY}}';
         url += '?testing-secret={{PARITYVEND_TESTING_KEY}}';
-        url += '&amp;testing-country=US'; // Emulate a visit from Bangladesh
+        url += '&amp;testing-country=BD'; // Emulate a visit from Bangladesh
 
         const response = await fetch(url);
         const jsonData = await response.json();
