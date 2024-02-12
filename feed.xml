@@ -3,7 +3,7 @@
     <title>catnotfoundnear</title>
     <link href="https://catnotfoundnear.github.io/feed.xml" rel="self" />
     <link href="https://catnotfoundnear.github.io" />
-    <updated>2024-02-12T12:24:40+01:00</updated>
+    <updated>2024-02-12T14:34:19+01:00</updated>
     <author>
         <name>catnotfoundnear</name>
     </author>
@@ -20,7 +20,7 @@
             <category term="saas"/>
             <category term="django"/>
 
-        <updated>2024-02-12T12:24:40+01:00</updated>
+        <updated>2024-02-12T14:34:19+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://catnotfoundnear.github.io/media/posts/4/catnotfoundnear_cover2-2.jpg" alt="" />
@@ -138,7 +138,7 @@
     )
 </code></pre>
 <p><span style="font-weight: 400;">Let’s run this. When I click on the “buy now” button, I am redirected to the Stripe checkout page. It works great!</span></p>
-<figure class="post__image" ><img loading="lazy" src="https://catnotfoundnear.github.io/media/posts/4/image10.png" alt="" width="1918" height="967" sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://catnotfoundnear.github.io/media/posts/4/responsive/image10-xs.webp 320w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image10-sm.webp 480w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image10-md.webp 768w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image10-xl.webp 1024w">
+<figure class="post__image" ><figure class="post__image"><img loading="lazy"  src="https://catnotfoundnear.github.io/media/posts/4/image10-2.png" alt="" width="1918" height="896" sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://catnotfoundnear.github.io/media/posts/4/responsive/image10-2-xs.webp 320w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image10-2-sm.webp 480w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image10-2-md.webp 768w ,https://catnotfoundnear.github.io/media/posts/4/responsive/image10-2-xl.webp 1024w"></figure>
 <figcaption >Stripe works!</figcaption>
 </figure>
 <p><span style="font-weight: 400;">So, now that we have a basic “SaaS”, let’s add geographical pricing to it. Based on my plan, I need to make changes to the pricing page and then to my checkout code. Before we proceed, let me briefly explain the project setup I completed in Parityvend: in short, I created a new project, entered an example domain, skipped the design step, added coupon codes for each country group I wanted to offer discounts in, and finally, copied my API keys. </span><span style="font-weight: 400;">Then, I went to Stripe and added the coupons for the ones I created in ParityVend. After this, I was good to go. I don't want to explain these boring steps as it was easy enough, so you probably can do it, too. </span></p>
